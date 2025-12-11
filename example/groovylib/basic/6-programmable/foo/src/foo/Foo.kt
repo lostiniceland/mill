@@ -1,14 +1,9 @@
 package foo
 
-import com.github.ajalt.clikt.core.CliktCommand
-import com.github.ajalt.clikt.parameters.options.option
-import com.github.ajalt.clikt.parameters.options.required
-import kotlinx.html.h1
-import kotlinx.html.stream.createHTML
-
+import groovy.cli.commons.CliBuilder
+import groovy.xml.MarkupBuilder
 class Foo : CliktCommand() {
     val text by option("-t", "--text", help = "text to insert").required()
-
     override fun run() {
         echo(generateHtml(text))
     }

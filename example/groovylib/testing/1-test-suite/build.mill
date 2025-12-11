@@ -4,13 +4,13 @@ import mill.*, groovylib.*
 
 object foo extends GroovyModule {
 
-  def groovyVersion = "5.0.1"
+  def groovyVersion = "5.0.3"
 
   object test extends GroovyTests with TestModule.Junit5 {
     def jupiterVersion = "5.13.4"
 
     def mvnDeps = Seq(
-      mvn"org.apache.groovy:groovy-test" // BOM already loaded by module
+      mvn"org.apache.groovy:groovy-test"
     )
   }
 }
@@ -25,7 +25,7 @@ object bar extends GroovyModule {
     def jupiterVersion = "5.13.4"
 
     def mvnDeps = Seq(
-      mvn"org.apache.groovy:groovy-test" // BOM already loaded by module
+      mvn"org.apache.groovy:groovy-test"
     )
   }
 }
